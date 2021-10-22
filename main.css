@@ -1,24 +1,24 @@
 /*main=main, item=image*/
 
-.img-box{
-	column-count: 3; #указываем количество колонн
-	/*column-gap: 0px; #отступ между нашими колонами*/
-}
 
 .image{
 	max-width: 100%; #максимальная ширина картинки в 100% от всей ширины колонны 
-	/*display: block; #отображение плиткой
+	display: block; #отображение плиткой
 	background-position: center;
-	background-size: cover;*/
-
+	background-size: cover;
+	column-count: 3; #указываем количество колонн
+	grid-gap: 5px;
+	column-gap: 5px;
+	grid-column-gap: 5px;
+	grid-template-areas: 5px;
 }
 .img + .image {
 	margin: 0px; #отступы между изображениями
 }
 .main{
 	margin: 30px;
-	padding-right: 15px;
-	padding-left: 15px;
+	padding-right: 5px;
+	padding-left: 5px;
 	padding-top: 5px;
 	background-color: rgba(230, 231, 232, 1.0);
 	box-shadow: 0 0 30px 5px rgba(0, 0, 0, 1.0);
