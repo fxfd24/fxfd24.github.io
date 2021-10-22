@@ -2,14 +2,14 @@
 
 .img-box{
 	column-count: 3; #указываем количество колонн
-	/*column-gap: 0px; #отступ между нашими колонами*/
+	column-gap: 0px; #отступ между нашими колонами
 }
 
 .image{
 	max-width: 100%; #максимальная ширина картинки в 100% от всей ширины колонны 
-	/*display: block; #отображение плиткой
+	display: block; #отображение плиткой
 	background-position: center;
-	background-size: cover;*/
+	background-size: cover;
 
 }
 .img + .image {
@@ -17,15 +17,23 @@
 }
 .main{
 	margin: 30px;
-	padding: 15px;
-	background-color: rgba(0, 50, 223, 0.5);
-	box-shadow: 0 0 60px 10px rgba(0, 50, 223, 1.0);
+	padding-right: 15px;
+	padding-left: 15px;
+	padding-top: 5px;
+	background-color: rgba(230, 231, 232, 1.0);
+	box-shadow: 0 0 30px 5px rgba(0, 0, 0, 1.0);
 	flex-wrap: wrap;
 }
 body {
 	background-color: #eee;
+	font-family: 'Noto Serif Display', serif ;
 }
 .heading {
 	font-size: 48px;
 	text-align: center;
+	margin-top: 10px;
+	margin-right: 50px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+	background-color: pink;
 }
