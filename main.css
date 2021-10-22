@@ -7,9 +7,9 @@
 
 .image{
 	max-width: 100%; #максимальная ширина картинки в 100% от всей ширины колонны 
-	/*display: block; #отображение плиткой*/
+	/*display: block; #отображение плиткой
 	background-position: center;
-	background-size: cover;
+	background-size: cover;*/
 
 }
 .img + .image {
