@@ -2,16 +2,17 @@
 
 
 .image{
-	max-width: 100%; #максимальная ширина картинки в 100% от всей ширины колонны 
-
-	column-count: 3; #указываем количество колонн
+	max-width: 100%; 
+	background-position: center;
+	background-size: cover;
+	column-count: 3; 
 	grid-gap: 5px;
 	column-gap: 5px;
 	grid-column-gap: 5px;
 	grid-template-areas: 5px;
 }
 .img + .image {
-	margin: 0px; #отступы между изображениями
+	margin: 0px; 
 }
 .main{
 	margin: 30px;
