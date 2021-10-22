@@ -3,8 +3,7 @@
 
 .image{
 	max-width: 100%; #максимальная ширина картинки в 100% от всей ширины колонны 
-	background-position: center;
-	background-size: cover;
+
 	column-count: 3; #указываем количество колонн
 	grid-gap: 5px;
 	column-gap: 5px;
