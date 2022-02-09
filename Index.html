@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<link rel="stylesheet" type="text/css" href="h1.css">
+	<title>JS</title>
+</head>
+<body>
+	<script src="script.js"></script>
+	<style>
+		body{
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		#topnav{
+			overflow: hidden;
+			background-color: #333;
+		}
+
+		#topnav a{
+			float: left;
+			padding: 15px 17px;
+			color: #eee;
+			text-align: center;
+			text-decoration: none;
+			font-size: medium;
+		}
+
+		#topnav a:hover{
+			background-color: #ddd;
+			color: #000;
+		}
+
+		#topnav a.active{
+			background-color: #8b008b;
+			color: #eee;
+		}
+
+		#title{
+			padding-left: 16px;
+			font-size: 15px;
+			text-align: right;
+			padding-top: 15px;
+			padding-right: 30px;
+		}
+	</style>
+	<header id="head">
+		<nav id="topnav">
+			<a href="#home" class="active">HOME</a>
+			<a href="#news">News</a>
+			<a href="#contacts">Contacts</a>
+			<a href="#about">About</a>
+			<h1 id="title">Java Script и его возможности при адаптивной верстке. </h1>
+		</nav>
+	</header>
+
+	<section id="top">
+			<div class="class_score" > <span id="score">0</span> <span>coockies</span></div>
+			<img src="img1.png" id="aaa" alt="img1.png" class="img" onclick="cl()">
+			<button class="bbr2" type="button" onclick="upgreat()">Усилить клик</button> <span class="nun">Нужно: </span><span id="up">10</span>
+	</section>
+</body>
+</html>

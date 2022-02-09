@@ -1,0 +1,33 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	height: 100%;
+	display: grid;
+	background-color: #000;
+}
+
+.class_score{
+	text-align: center;
+	padding: 30px;
+}
+.img{
+	margin-left: 450px;
+	/*значение margin подбирайте*/
+	/*для вашей картинки сами*/
+}
+.bbr2{
+	width: 1500px;
+	margin-left: 10px;
+	background-color: black;
+	color: white;
+	padding: 20px;
+	border-radius: 20px;
+}
+section{
+
+	background-color: black;
+	color: white;
+	font-size: 32px;
+}
