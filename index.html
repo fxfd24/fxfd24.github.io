@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/main.css">
+    <link rel="stylesheet" href="main.css">
     <style srollbar >
 		/*Убрать полосу прокрутки для всей страницы*/
 		/*::-webkit-scrollbar {
@@ -19,7 +19,7 @@
     <!-- Menu start -->
     <header class="menu" >
         <div class="menu-wrap">
-            <img src="bl/gif.gif" class="logo-img" alt="Logo" style="height: 12vh; margin-top: -20px; margin-left: -30px;">
+            <img src="gif.gif" class="logo-img" alt="Logo" style="height: 12vh; margin-top: -20px; margin-left: -30px;">
             <input type="checkbox" id="checkbox">
             <nav>
                 <ul>
@@ -36,7 +36,7 @@
     </header>
     <style nav>
     	body{
-		    background: url(bl/gif2.gif);
+		    background: url(gif2.gif);
 		    background-size: cover;
 		   /* background-position: center;*/
 		    background-repeat: no-repeat;
@@ -134,11 +134,11 @@
     </div>
     
     <div class="block1" style="height: 100vh; width: 100vw; background: black;  display: flex; justify-content: center; align-items: center; position: relative; ">
-    	<div class="border" style="position: absolute; top: 0; left: 0; height:10vh; width: 100vw; background:black; background-image: url(bl/gif.gif);
+    	<div class="border" style="position: absolute; top: 0; left: 0; height:10vh; width: 100vw; background:black; background-image: url(gif.gif);
 		    background-repeat: repeat;
 		    background-size: contain;
 		    background-position: center; box-shadow: 0 30px 30px 1px rgba(0, 0, 0, 1);"></div>
-    	<div class="border" style="position: absolute; bottom: 0; left: 0; height:10vh; width: 100vw; background:black; background-image: url(bl/gif.gif);
+    	<div class="border" style="position: absolute; bottom: 0; left: 0; height:10vh; width: 100vw; background:black; background-image: url(gif.gif);
 		    background-repeat: repeat;
 		    background-size: contain;
 		    background-position: center; box-shadow: 0 -30px 30px 1px rgba(0, 0, 0, 1);"></div>
@@ -148,7 +148,7 @@
 
     <div class="block1" style="height: 100vh; width: 100vw; background: rgba(0, 0, 0, 0); display: flex; justify-content:center; align-items:center;">
     
-				<img src="bl/8.1.png" style="max-width: 100%;">
+				<img src="8.1.png" style="max-width: 100%;">
 
 			
 
@@ -277,120 +277,7 @@
     </div>
     	
     <div class="" style="height: 80vh; width: 100vw;  background: black;">
-    	<div class="random">
-			<div class="result"></div>
-			<div class="cards">
-				<div><img class="rk" src="rick/1.jpg"></div>
-				<div><img class="rk"src="rick/2.jpg"></div>
-				<div><img class="rk"src="rick/3.jpg"></div>
-				<div><img class="rk"src="rick/4.png"></div>
-				<div><img class="rk"src="rick/5.jpg"></div>
-				<div><img class="rk"src="rick/6.jpg"></div>
-				<div><img class="rk"src="rick/7.jpg"></div>
-				<div><img class="rk"src="rick/1.jpg"></div>
-				<div><img class="rk"src="rick/2.jpg"></div>
-				<div><img class="rk"src="rick/3.jpg"></div>
-				<div><img class="rk"src="rick/4.png"></div>
-				<div><img class="rk" src="rick/1.jpg"></div>
-				<div><img class="rk"src="rick/2.jpg"></div>
-				<div><img class="rk"src="rick/3.jpg"></div>
-				<div><img class="rk"src="rick/4.png"></div>
-				<div><img class="rk"src="rick/5.jpg"></div>
-				<div><img class="rk"src="rick/6.jpg"></div>
-				<div><img class="rk"src="rick/7.jpg"></div>
-				<div><img class="rk"src="rick/1.jpg"></div>
-				<div><img class="rk"src="rick/2.jpg"></div>
-				<div><img class="rk"src="rick/3.jpg"></div>
-				<div><img class="rk"src="rick/4.png"></div>
-			</div>
-		</div>
-		<button class="start" onclick="start()">CHOSE YOUR RICK</button>
-		
-		<script src="ruletka.js"></script>
-		<style ruletka>
-			.rk{
-				background-size: center;
-				width: 100%;
-				height: 100%;
-			}
-			button:focus {
-				outline: none;
-			}
-
-			.start {
-				position: absolute;
-				top: calc(50% + 410vh);
-				left: 50%;
-				background: #51D05E;
-				transform: translate(-50%, -50%);
-				width: 200px;
-				height: 25px;
-				border: 2px solid #4CBD58;
-				color: white;
-				font-weight: bold;
-				border-radius: 5px;
-				transition: 0.3s ease;
-				user-select: none;
-				cursor: pointer;
-				filter: drop-shadow(2px 2px 2px rgba(89, 217, 102, 0.2));
-			}
-
-			.start:hover {
-				background: #4CBD58;
-			}
-
-
-			.random {
-				position: absolute;
-				overflow: hidden;
-				left: 50%;
-				top: calc(50% + 400vh);
-				transform: translate(-50%, -50%);
-				border-radius: 10px;
-				width: 60vw;
-				height: 50px;
-				background: #161D31;
-			}
-
-			.cards {
-				position: absolute;
-				left: 0;
-				top: 0;
-				width: 2000px;
-				height: 100%;
-				transition: 5s ease;
-			}
-
-			.cards > div {
-				position: relative;
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				float: left;
-				font-family: sans-serif;
-				font-weight: bold;
-				font-size: 20px;
-				margin-top: 5px;
-				margin-left: 5px;
-				width: 50px;
-				height: 45px;
-				color: #6A6A6A;
-				background: white;
-				border-radius: 10px;
-			}
-
-			.result {
-				position: absolute;
-				z-index: 10;
-				left: 50%;
-				top: 0;
-				transform: translateX(-50%);
-				border: 10px solid transparent;
-				border-top: 20px solid #425DD8;
-				filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
-			}
-		</style>
-    	
+    	    	
     	<div style="position:absolute; top:calc(50% + 410vh); left: 10%;">
     		<img src="bl/20.png">
     	</div>
