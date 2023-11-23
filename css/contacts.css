@@ -1,0 +1,43 @@
+.contact_vk1{
+	text-shadow: 5px 0px 5px;
+	height: 10px;
+	color: white;
+	
+}
+.contact_vk1:hover{
+	text-shadow: 10px 0px 10px;
+	cursor: pointer;
+	height: 10px;
+	color: white;
+	transition: 0.3s;
+}
+.lead{
+	margin-top: 30px;
+}
+.contact_vk2{
+	text-shadow: 5px 0px 5px;
+	height: 10px;
+	color: black;
+	
+}
+.contact_vk2:hover{
+	text-shadow: 10px 0px 10px;
+	cursor: pointer;
+	height: 10px;
+	color: black;
+	transition: 0.3s;
+}
+.vk{
+	border-radius: 15px;
+	width: 2.5vw; margin-top: 2vh; 
+	box-shadow: 6px 6px 6px; 
+	color: violet;
+}
+.vk:hover{
+	border-radius: 15px;
+	width: 2.6vw; margin-top: 2vh; 
+	box-shadow: 8px 7px 8px; 
+	color: violet;
+	cursor: pointer;
+	transition: 0.1s;
+}
