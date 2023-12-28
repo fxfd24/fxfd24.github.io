@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100" data-bs-theme="auto">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- ссылки подключения к bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+	<!-- Custom styles for this templates -->
+  <link href="css/cover.css" rel="stylesheet">
+  <!-- Подключаем неоновый эффект -->
+  <link rel="stylesheet" type="text/css" href="css/neon.css">
+  <!-- Подключаем кастомный скролбар -->
+  <link rel="stylesheet" type="text/css" href="css/custom_scrollbar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <style type="text/css">
+  	body{
+  		font-family: 'Ubuntu', sans-serif;
+  	}
+  </style>
+
+	<title>Game studio</title>
+</head>
+<body id="info" class="d-flex h-100 text-center " style="background-color: black;">
+	<div class="cover-container d-flex w-100 p-3 mx-auto flex-column" style="flex-grow: 3;">
+		<header class="mb-auto" id="txt2">
+		    <div>
+		      <h2 class="float-md-start mb-0 sign_word"	style="color:white;">Online School</h2>
+		      <nav class="nav nav-masthead justify-content-center float-md-end">
+		        <a class="nav-link fw-bold py-1 px-0 active sign_word" aria-current="page" href="index_v2.html"><span>Главная</span></a>
+		        <a class="nav-link fw-bold py-1 px-0" href="students_v2.html">Ученики</a>
+		      </nav>
+		    </div>
+	  	</header>
+	  	<br >
+	  <!-- инфа о направлении -->
+  <!-- инфа о направлении -->
+	  <div  class="d-flex flex-column container rounded text-light my-3 p-0 w-100" style="flex-grow: 3;">
+
+  			<div id="txt" class="m-1 rounded border border-light border_neon" style=" height:auto; background: -webkit-linear-gradient(45deg, rgb(0, 0, 0), rgb(29, 3, 39), rgb(0, 0, 0)); background: -moz-linear-gradient(45deg, rgb(0, 0, 0), rgb(29, 3, 39), rgb(0, 0, 0)); background: linear-gradient(45deg, rgb(0, 0, 0), rgb(29, 3, 39), rgb(0, 0, 0));">
+  				<div class="p-1" id="txt3">
+
+  					<h1 class = "mt-1" style="font-size: 1rem;">Godot - открытый кроссплатформенный 2D- и 3D-игровой движок.</p>
+  				</div>
+	 		</div>
+	 		<br>
+
+ 			<div id="scroll_info" class="m-1 rounded border border-light border_neon" style="background-color:black; overflow:auto;">
+	 			<div  style="width:100%;">
+
+	 				<div class="rounded border_neon m-1">
+	 					<div style="width: 100%; padding: 50px;">
+	 						<img class="rounded" src="g1_content/g_gifk_2.gif" style="width:100%;">
+	 						<h1 class="my-3" style="font-size: 1rem;">Варухорор</h1>
+	  						<p style="font-size: 1rem;">Это интересный хорор, созданный по мотивам русского комикса. </p>
+	  						<a href="g1.html"><button type="button" class="btn btn-success btn-sm" style="width:100%;">Узнать больше</button></a>
+	 					</div>	
+	 				</div>
+
+
+	 			
+	 				
+  				</div>
+	 		</div>
+
+	  </div>
+	  <script type="text/javascript">
+	  	var a = document.getElementById("info");
+	  	var b = document.getElementById("txt");
+	  	var b2 = document.getElementById("txt2");
+	  	var b3 = document.getElementById("txt3");
+	  	var c = document.getElementById("scroll_info");
+	  	
+	  	var height_a = window.getComputedStyle(a, null).height;
+	  	var height_b = window.getComputedStyle(b, null).height;
+	  	var height_b2 = window.getComputedStyle(b2, null).height;
+	  	var height_b3 = window.getComputedStyle(b3, null).height;
+	  	var height_c = window.getComputedStyle(c, null).height;
+
+	  	height_a = Number(height_a.slice(0, -2));
+	  	height_b = Number(height_b.slice(0, -2));
+	  	height_b2 = Number(height_b2.slice(0, -2));
+	  	height_b3 = Number(height_b3.slice(0, -2));
+
+	  	console.log(height_a);
+	  	console.log(height_b);
+	  	console.log(height_b2);
+	  	console.log(height_b3);
+
+	  	var new_height_c = height_a - height_b*2 - height_b2 - height_b3;
+	  	console.log(new_height_c);
+
+		c.style.height = new_height_c + "px";
+
+	  </script>
+	</div>
+	<link href="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/snow.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/Snow.min.js"></script>
+	<script>
+		new Snow ();
+	</script>
+</body>
+</html>
