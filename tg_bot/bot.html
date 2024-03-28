@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Submission to Telegram</title>
+</head>
+<body>
+
+<form id="feedbackForm">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email"><br>
+  <label for="message">Message:</label><br>
+  <textarea id="message" name="message"></textarea><br>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the default form submission
+  
+  // Fetch form data
+  const formData = new FormData(event.target);
+  
+  // Prepare message to be sent to Telegram
+  const message = `
+    New Feedback:
+    Name: ${formData.get('name')}
+    Email: ${formData.get('email')}
+    Message: ${formData.get('message')}
+  `;
+  
+  // Your Telegram Bot API token
+  const token = '6744929263:AAGdSXzfHSgzC2W1y008jKl1NV8A_pBOqT0';
+  // Your Telegram chat ID
+  const chatID = '1286015414';
+  
+  // Construct the Telegram API URL
+  const telegramAPI = `https://api.telegram.org/bot${token}/sendMessage`;
+  
+  // Prepare data to be sent to Telegram
+  const data = new URLSearchParams({
+    chat_id: chatID,
+    text: message
+  });
+  
+  // Send the message to Telegram using AJAX
+  fetch(telegramAPI, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },
+    body: data
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    alert('Feedback sent successfully!');
+  })
+  .catch(error => {
+    console.error('There was a problem with your fetch operation:', error);
+    alert('Failed to send feedback. Please try again later.');
+  });
+});
+</script>
+
+</body>
+</html>
