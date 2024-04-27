@@ -285,7 +285,7 @@
           <p>Вы можете заполнить форму для получения консультации по Вашей проблеме.</p>
         </div>
 
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
+        <form id = "orderForm">
           <div class="row">
             <div class="col-md-4 form-group">
               <input type="text" name="name" class="form-control" id="name" placeholder="Имя" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
@@ -314,6 +314,67 @@
         </form>
 
       </div>
+
+      <script>
+        document.getElementById("orderForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          // Fetch form data
+          const formData = new FormData(event.target);
+          
+          // Prepare message to be sent to Telegram
+          let message = `
+            Новый пациент:
+
+            😎 : ${formData.get('name')}
+            📞 : ${formData.get('phone')}
+            📨 : ${formData.get('email')}
+          `;
+          
+          // Check if comment is provided, otherwise set a default one
+          const comment = formData.get('message');
+          if (comment.trim() !== '') {
+            message += `\n📝 : ${comment}`;
+          } else {
+            message += "\n📝 : [No message]";
+          }
+          
+          // Your Telegram Bot API token
+          const token = '6579753297:AAEcJNNZAC_tl1PyvxO9hyNCcWcY57JPBVg';
+          // Your Telegram chat ID
+          const chatID = '-4163247813';
+          
+          // Construct the Telegram API URL
+          const telegramAPI = `https://api.telegram.org/bot${token}/sendMessage`;
+          
+          // Prepare data to be sent to Telegram
+          const data = new URLSearchParams({
+            chat_id: chatID,
+            text: message
+          });
+          
+          // Send the message to Telegram using AJAX
+          fetch(telegramAPI, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: data
+          })
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Network response was not ok');
+            }
+            alert('Заказ отправлен админу!');
+            // Optionally reset the form after successful submission
+            document.getElementById("orderForm").reset();
+          })
+          .catch(error => {
+            console.error('There was a problem with your fetch operation:', error);
+            alert('Failed to submit order. Please try again later.');
+          });
+        });
+      </script>
     </section><!-- End Appointment Section -->
 
 
