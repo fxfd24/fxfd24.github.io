@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Мой онлайн-прошивальщик</title>
+</head>
+<body>
+    <h1>Онлайн-прошивальщик для ESP</h1>
+
+    <button id="connectButton">Подключить</button>
+    <br><br>
+    <label for="firmware">Выберите файл прошивки (.bin):</label>
+    <input type="file" id="firmware" accept=".bin">
+    <br><br>
+    <button id="programButton" disabled>Прошить</button>
+    <br><br>
+    <label for="console">Логи:</label>
+    <pre id="console" style="border: 1px solid #ccc; padding: 10px; min-height: 200px; background: #f0f0f0;"></pre>
+
+    <!-- Подключение библиотеки esptool-js -->
+    <script src="https://espressif.github.io/esptool-js/bundle.js"></script>
+    <script>
+        const connectButton = document.getElementById('connectButton');
+        const programButton = document.getElementById('programButton');
+        const firmwareFile = document.getElementById('firmware');
+        const consoleLog = document.getElementById('console');
+
+        let device, esploader;
+
+        function log(message) {
+            consoleLog.textContent += message + '\n';
+            consoleLog.scrollTop = consoleLog.scrollHeight;
+        }
+
+        connectButton.addEventListener('click', async () => {
+            try {
+                if (!device) {
+                    device = await navigator.serial.requestPort({});
+                }
+                const transport = new Transport(device);
+                esploader = new ESPLoader({
+                    transport,
+                    baudrate: 115200,
+                    romBaudrate: 115200,
+                    log: (...args) => log(args.join(' ')),
+                });
+
+                const chip = await esploader.main_fn();
+                log(`Устройство подключено! Чип: ${chip}`);
+                programButton.disabled = false;
+            } catch (error) {
+                log('Ошибка подключения: ' + error.message);
+                if (device) {
+                    await device.close();
+                    device = null;
+                }
+            }
+        });
+        
+        programButton.addEventListener('click', async () => {
+            if (!firmwareFile.files[0]) {
+                log('Пожалуйста, выберите файл прошивки.');
+                return;
+            }
+
+            programButton.disabled = true;
+            
+            try {
+                const reader = new FileReader();
+                reader.onload = async (e) => {
+                    const file_content = e.target.result;
+                    log('Начало прошивки...');
+                    await esploader.write_flash(
+                        [{ data: file_content, address: 0x10000 }], // Пример адреса, измените при необходимости
+                        'keep'
+                    );
+                    log('Прошивка успешно завершена!');
+                };
+                reader.readAsBinaryString(firmwareFile.files[0]);
+            } catch (error) {
+                log('Ошибка прошивки: ' + error.message);
+            } finally {
+                programButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
